@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="project.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="container">
+        <div class="row">
+          <ul id="navleft" class="pull-left">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+          </ul>
+          <ul id="navright" class="pull-right">
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="contact_information.html">Contact information</a></li>
+            <li id="blog"><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="jumbotron" class="jumbotron">
+        <div>
+          <h1 id="massage">Let me take care of you.</h1>
+          <p>You deserve it.</p>
+          <a href="#">Learn More</a>
+          <a href="#"></a>
+        </div>
+        <div class="audio-controls">
+          <audio autoplay>
+            <source src="music.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+    </div> 
+
+
+   
+  <script type="text/javascript">
+
+    $(window).load(function() {          
+      var i=0;
+      var images = ['stone_balancing_arch.jpg', 'stones_sky.jpg', 'stone_2.jpg', 'stone_3.jpg', 'stone_4.jpg'];
+      var image = $('#jumbotron');
+      
+      //Initial Background image setup
+      image.css('background-image', 'url(stone_balancing_arch.jpg)');
+ 
+      //Change image at regular intervals
+      setInterval(function(){  
+        image.fadeOut(1000, function () {
+        image.css('background-image', 'url(' + images [i++] +')');
+        image.fadeIn(1000);
+      });
+      if(i == images.length)
+        i = 0;
+      }, 5000);           
+    });
+
+
+
+   $('#contactInformation').on('click', function() { // code
+      // alert("you have clicked on rates");
+      var contactInformation = "My adress";
+      contactInformation = contactInformation + "<p>";
+      contactInformation = contactInformation + "1. Phone:415 632 2157";
+      $("#massage").html(contactInformation);
+    });
+
+    $('#blog').on('click', function() {
+      var blog = "My Perspective";
+      blog = blog + "<p>";
+       
+      blog = blog + "<p>I help you unwind and heal from the pressures of modern life. <p>I believe that choosing a treatment should be simple. I believe in transparent and per minute pricing. I believe in customizing your session to your needs. <p>See for yourself and feel Alive, Beautiful";
+      $("#massage").html(blog);
+    });
+
+  </script>
+  </body>
+</html>

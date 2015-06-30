@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="project.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="container">
+        <div class="row">
+          <ul id="navleft" class="pull-left">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+          </ul>
+          <ul id="navright" class="pull-right">
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="contact_information.html">Contact information</a></li>
+            <li id="blog"><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="treatments" class="jumbotron">
+      <div id="massagestyles" class="row">
+        <div class="col-md-2"><h4>COMBINATION MASSAGE</h4></div>
+        <div class="col-md-2"><h4>SWEDISH</h4></div>
+        <div class="col-md-2"><h4>DEEP TISSUE</h4></div>
+        <div class="col-md-2"><h4>FOOT REFLEXOLOGY</h4></div>
+        <div class="col-md-2"><h4>MEDICAL MASSAGE</h4></div>
+        <div class="col-md-2"><h4>REIKI</h4></div>
+      </div>
+      <div id="massagedescriptions" class="row">
+        <div class="col-md-2">
+          <span>This is by far the most requested session. You will experience a blend of different styles including Swedish massage, deep tissue, stretching and compression. Be assured that all the while I will be concentrating on the areas of your body where you are holding the most tension.</span></div>
+        <div class="col-md-2">
+          <span>This style of massage combines long flowing strokes designed to increase circulation, and kneading, wringing strokes that will flush toxins out of sore muscles. It is generally a gentler and more relaxing style of bodywork.</span></div>
+        <div class="col-md-2">
+          <span>As the name implies, this session uses techniques that will work the muscles on a deeper level. Clients will often comment on experiencing 'the good kind of pain'.</span></div>
+        <div class="col-md-2">
+          <span>This session is done on the feet and lower legs. The entire body is represented in reflexes on our feet, thus making the feet a miniature map of the body. This is a very relaxing session that will often produce surprising benefits throughout the whole body.</span></div>
+        <div class="col-md-2">
+          <span>Before the session there will be a brief discussion to determine which muscles are the cause of any tension or discomfort, and what would be the most effective way to design the session so as to reduce this pain. The session will focus primarily on these problem areas.</span></div>
+        <div class="col-md-2">
+          <span>The name Reiki comes from the Japanese words meaning Universal Energy. This method of “energy work” originated in Japan many years ago. During this session the client remains fully clothed (we suggest you wear light comfortable clothing) while I use a light calming touch to restore, balance and enhance the energy centers within and surrounding the body.</span></div>
+      </div>
+    </div>
+    <div class="audio-controls">
+          <audio autoplay controls>
+            <source src="music.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+    <script type="text/javascript">
+      $(window).load(function() {          
+        var i=0;
+        var images =  ['stone_balancing_arch.jpg', 'stones_sky.jpg', 'stone_4.jpg', 'stone_2.jpg', 'stone_3.jpg'];
+        var image = $('#treatments');
+        
+        //Initial Background image setup
+        image.css('background-image', 'url(stone_balancing_arch.jpg)');
+   
+        //Change image at regular intervals
+        setInterval(function(){  
+          image.fadeOut(1000, function () {
+          image.css('background-image', 'url(' + images [i++] +')');
+          image.fadeIn(1000);
+        });
+        if(i == images.length)
+          i = 0;
+        }, 5000);           
+      });
+    </script>
+  </body>
+ </html>
+
+  
+ 
